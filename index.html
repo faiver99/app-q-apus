@@ -49,7 +49,16 @@
                 <section>
                     <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-yellow-500 pb-2"><i class="fas fa-tools mr-3 text-yellow-500"></i>EQUIPOS Y HERRAMIENTAS</h2>
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4"><input list="equipments-datalist" id="equipment-selector" placeholder="Buscar equipo..." class="w-full p-2 border rounded-lg md:col-span-2"><datalist id="equipments-datalist"></datalist><input type="number" id="equipment-performance" placeholder="Rendimiento" class="input-number w-full p-2 border rounded-lg"><button id="add-equipment-btn" class="w-full bg-yellow-500 text-white p-2 rounded-lg hover:bg-yellow-600">Añadir Equipo</button></div>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 items-center bg-yellow-50 p-2 rounded-lg"><label for="herramienta-menor-pct" class="md:col-span-2 font-medium text-gray-700">Herramienta Menor (% de Mano de Obra):</label><input type="number" id="herramienta-menor-pct" value="0" placeholder="% Herramienta Menor" class="input-number w-full p-2 border rounded-lg"><div></div></div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 items-center bg-yellow-50 p-2 rounded-lg">
+                        <label for="herramienta-menor-pct" class="md:col-span-2 font-medium text-gray-700">Herramienta Menor (% de Mano de Obra):</label>
+                        <div class="relative">
+                            <input type="number" id="herramienta-menor-pct" value="0" placeholder="% Herramienta Menor" class="input-number w-full p-2 border rounded-lg pr-8">
+                            <button type="button" id="clear-herramienta-menor-btn" class="absolute inset-y-0 right-0 px-3 flex items-center text-gray-500 hover:text-red-600" title="Eliminar Herramienta Menor">
+                                <i class="fas fa-times-circle"></i>
+                            </button>
+                        </div>
+                        <div></div>
+                    </div>
                     <div class="table-container border rounded-lg"><table class="w-full text-sm text-left text-gray-500"><thead class="text-xs text-gray-700 uppercase bg-gray-100 sticky top-0"><tr><th class="px-6 py-3">Descripción</th><th class="px-6 py-3">Unidad</th><th class="px-6 py-3">Rendimiento / %</th><th class="px-6 py-3">Vr. Unitario / Base</th><th class="px-6 py-3">Total</th><th class="px-2 py-3"></th></tr></thead><tbody id="equipment-table"></tbody><tbody id="herramienta-menor-container"></tbody></table></div>
                     <div class="flex justify-end mt-2 pr-4"><div class="flex items-center space-x-4"><h3 class="font-semibold text-gray-600">SUBTOTAL EQUIPOS:</h3><p id="subtotal-equipment" class="text-lg font-bold text-gray-800">$ 0</p></div></div>
                 </section>
@@ -232,6 +241,7 @@
         $('newApuBtn').addEventListener('click', resetForm);
         $('saveApuBtn').addEventListener('click', saveApu);
         $('apuSearchInput').addEventListener('input', (e) => renderSavedApus(savedApus, e.target.value));
+        $('clear-herramienta-menor-btn').addEventListener('click', () => { $('herramienta-menor-pct').value = 0; calculateAll(); });
 
         // --- INITIAL LOAD ---
         window.onload = () => {
@@ -249,4 +259,4 @@
         };
     </script>
 </body>
-</html>
+</html>" is a part of the document that is currently open on the right-hand side of the scre
