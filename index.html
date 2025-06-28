@@ -91,7 +91,7 @@
     <div id="savedApusModalBackdrop" class="modal-backdrop"></div><div id="savedApusModal" class="modal bg-white rounded-xl shadow-2xl w-11/12 md:w-3/4 lg:w-2/3 max-w-4xl"><div class="p-6 border-b flex flex-col sm:flex-row justify-between items-center gap-4"><h2 class="text-2xl font-bold text-gray-800 shrink-0">APUs Guardados</h2><div class="relative w-full sm:w-1/2"><input type="text" id="apuSearchInput" placeholder="Buscar APU por nombre..." class="w-full p-2 pl-10 border rounded-lg bg-gray-50 focus:ring-2 focus:ring-indigo-500"><i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i></div><button id="closeApusModalBtn" class="text-gray-500 hover:text-red-600 text-2xl absolute top-4 right-4 sm:static">&times;</button></div><div id="savedApusList" class="p-6 max-h-[60vh] overflow-y-auto"><p id="loadingApusText">Cargando APUs...</p></div></div>
     <div id="insumosModalBackdrop" class="modal-backdrop"></div><div id="insumosModal" class="modal bg-white rounded-xl shadow-2xl w-11/12 md:w-3/4 lg:w-2/3 max-w-5xl"><div class="p-6 border-b flex justify-between items-center"><h2 class="text-2xl font-bold text-gray-800">Base de Insumos</h2><button id="closeInsumosModalBtn" class="text-gray-500 hover:text-red-600 text-2xl">&times;</button></div><div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6"><div class="md:col-span-1"><h3 id="insumo-form-title" class="font-semibold text-lg mb-3">Añadir Nuevo Insumo</h3><form id="add-insumo-form" class="space-y-3"><input type="hidden" id="editing-insumo-id"><select id="insumo-type" class="w-full p-2 border rounded-lg bg-gray-50"><option value="material">Material</option><option value="equipment">Equipo</option></select><input type="text" id="insumo-description" placeholder="Descripción" class="w-full p-2 border rounded-lg" required><input type="text" id="insumo-unit" placeholder="Unidad" class="w-full p-2 border rounded-lg" required><input type="number" id="insumo-price" placeholder="Precio Unitario" class="input-number w-full p-2 border rounded-lg" required><div id="insumo-form-buttons" class="space-y-2"><button type="submit" id="insumo-submit-btn" class="w-full bg-teal-500 text-white p-2 rounded-lg hover:bg-teal-600">Añadir a la Base</button><button type="button" id="insumo-cancel-btn" class="w-full bg-gray-500 text-white p-2 rounded-lg hover:bg-gray-600 hidden">Cancelar Edición</button></div></form></div><div class="md:col-span-2"><h3 class="font-semibold text-lg mb-3">Lista de Insumos</h3><div id="insumos-list-container" class="max-h-[50vh] overflow-y-auto border rounded-lg"><table class="w-full text-sm text-left text-gray-500"><thead class="text-xs text-gray-700 uppercase bg-gray-50 sticky top-0"><tr><th scope="col" class="px-4 py-2">Descripción</th><th scope="col" class="px-4 py-2">Unidad</th><th scope="col" class="px-4 py-2">Precio</th><th scope="col" class="px-4 py-2">Tipo</th><th scope="col" class="px-1 py-2">Acciones</th></tr></thead><tbody id="insumos-table-body"><tr><td colspan="5" class="text-center p-4" id="loadingInsumosText">Cargando...</td></tr></tbody></table></div></div></div></div>
     <div id="personnelModalBackdrop" class="modal-backdrop"></div><div id="personnelModal" class="modal bg-white rounded-xl shadow-2xl w-11/12 md:w-3/4 lg:w-2/3 max-w-5xl"><div class="p-6 border-b flex justify-between items-center"><h2 class="text-2xl font-bold text-gray-800">Base de Personal</h2><button id="closePersonnelModalBtn" class="text-gray-500 hover:text-red-600 text-2xl">&times;</button></div><div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6"><div class="md:col-span-1"><h3 id="personnel-form-title" class="font-semibold text-lg mb-3">Añadir Nuevo Personal</h3><form id="add-personnel-form" class="space-y-3"><input type="hidden" id="editing-personnel-id"><input type="text" id="personnel-description" placeholder="Cargo (Ej: Oficial, Ayudante)" class="w-full p-2 border rounded-lg" required><input type="number" id="personnel-wage" placeholder="Jornal Básico" class="input-number w-full p-2 border rounded-lg" required><input type="number" id="personnel-benefits" placeholder="Prestaciones Sociales (%)" class="input-number w-full p-2 border rounded-lg" required><div id="personnel-form-buttons" class="space-y-2"><button type="submit" id="personnel-submit-btn" class="w-full bg-purple-500 text-white p-2 rounded-lg hover:bg-purple-600">Añadir a la Base</button><button type="button" id="personnel-cancel-btn" class="w-full bg-gray-500 text-white p-2 rounded-lg hover:bg-gray-600 hidden">Cancelar Edición</button></div></form></div><div class="md:col-span-2"><h3 class="font-semibold text-lg mb-3">Lista de Personal</h3><div id="personnel-list-container" class="max-h-[50vh] overflow-y-auto border rounded-lg"><table class="w-full text-sm text-left text-gray-500"><thead class="text-xs text-gray-700 uppercase bg-gray-50 sticky top-0"><tr><th scope="col" class="px-4 py-2">Cargo</th><th scope="col" class="px-4 py-2">Jornal Básico</th><th scope="col" class="px-4 py-2">Prestaciones (%)</th><th scope="col" class="px-4 py-2">Jornal Total</th><th scope="col" class="px-1 py-2">Acciones</th></tr></thead><tbody id="personnel-table-body"><tr><td colspan="5" class="text-center p-4" id="loadingPersonnelText">Cargando...</td></tr></tbody></table></div></div></div></div>
-    <div id="viewerModalBackdrop" class="modal-backdrop"></div><div id="viewerModal" class="modal bg-gray-100 rounded-xl shadow-2xl w-11/12 max-w-4xl"><div class="p-4 bg-white rounded-t-xl border-b flex justify-between items-center no-print"><h2 class="text-2xl font-bold text-gray-800">Vista de Reporte APU</h2><div class="flex items-center gap-2"><button id="downloadPdfBtn" class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600 flex items-center gap-2"><i class="fas fa-file-pdf"></i>PDF</button><button id="downloadExcelBtn" class="bg-green-600 text-white px-3 py-1 rounded-lg hover:bg-green-700 flex items-center gap-2"><i class="fas fa-file-excel"></i>Excel</button><button id="shareApuBtn" class="bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-600 flex items-center gap-2"><i class="fas fa-share-alt"></i>Compartir</button><button id="closeViewerModalBtn" class="text-gray-500 hover:text-red-600 text-2xl ml-4">&times;</button></div></div><div id="apuViewerContainer" class="p-8 max-h-[85vh] overflow-y-auto bg-white"></div></div>
+    <div id="viewerModalBackdrop" class="modal-backdrop"></div><div id="viewerModal" class="modal bg-gray-100 rounded-xl shadow-2xl w-11/12 max-w-4xl"><div class="p-4 bg-white rounded-t-xl border-b flex justify-between items-center no-print"><h2 class="text-2xl font-bold text-gray-800">Vista de Reporte APU</h2><div class="flex items-center gap-2"><button id="downloadPdfBtn" class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-600 flex items-center gap-2"><i class="fas fa-file-pdf"></i>PDF</button><button id="downloadExcelBtn" class="bg-green-600 text-white px-3 py-1 rounded-lg hover:bg-green-700 flex items-center gap-2"><i class="fas fa-file-excel"></i>Excel</button><button id="closeViewerModalBtn" class="text-gray-500 hover:text-red-600 text-2xl ml-4">&times;</button></div></div><div id="apuViewerContainer" class="p-8 max-h-[85vh] overflow-y-auto bg-white"></div></div>
     <div id="confirmModalBackdrop" class="modal-backdrop"></div><div id="confirmModal" class="modal bg-white rounded-xl shadow-2xl w-11/12 max-w-md"><div class="p-6"><h3 class="text-lg font-bold text-gray-900" id="confirmModalTitle">Confirmar Acción</h3><p class="mt-2 text-sm text-gray-600" id="confirmModalText">¿Estás seguro?</p></div><div class="bg-gray-50 px-6 py-3 flex justify-end space-x-3 rounded-b-xl"><button id="confirmModalCancelBtn" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300">Cancelar</button><button id="confirmModalConfirmBtn" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">Confirmar</button></div></div>
     <div id="toast" class="toast"></div>
 
@@ -222,12 +222,12 @@
         function displayApuInViewer(apu) {
             apuForExport = apu;
             const container = $('apuViewerContainer');
-            const subtotalMaterials = (apu.materials || []).reduce((s, i) => s + ((i.quantity || 0) * (i.price || 0)), 0);
             const subtotalLabor = (apu.labor || []).reduce((s, i) => s + ((i.quantity || 1) * (i.performance || 0) * (i.price || 0)), 0);
             const herramientaMenorPct = apu.herramientaMenorPct || 0;
             const herramientaMenorValue = subtotalLabor * (herramientaMenorPct / 100);
             const subtotalManualEquipment = (apu.equipment || []).reduce((s, i) => s + ((i.performance || 0) * (i.price || 0)), 0);
             const subtotalEquipment = subtotalManualEquipment + herramientaMenorValue;
+            const subtotalMaterials = (apu.materials || []).reduce((s, i) => s + ((i.quantity || 0) * (i.price || 0)), 0);
             const subtotalTransport = (apu.transport || []).reduce((s, i) => s + ((i.quantity || 0) * (i.price || 0)), 0);
             const directCost = subtotalMaterials + subtotalLabor + subtotalEquipment + subtotalTransport;
             const adminValue = directCost * ((apu.adminPercentage || 0) / 100);
@@ -238,6 +238,12 @@
             
             const createTable = (title, headers, data, type) => {
                 let rows = ''; let subtotal = 0;
+                
+                const headerHtml = headers.map(h => {
+                    const alignClass = ['Unidad', 'Cantidad', 'Rendimiento', 'Rendimiento / %'].includes(h) ? 'text-center' : 'text-left';
+                    return `<th class="px-4 py-2 ${alignClass}">${h}</th>`;
+                }).join('');
+
                 if(data && data.length > 0) {
                     data.forEach(item => {
                         const price = item.price || 0;
@@ -246,29 +252,70 @@
                             const quantity = item.quantity || 1;
                             const performance = item.performance || 0;
                             total = quantity * performance * price;
-                            cells = `<td class="px-4 py-2">${item.description}</td><td class="px-4 py-2">${item.unit}</td><td class="px-4 py-2 text-right">${quantity}</td><td class="px-4 py-2 text-right">${performance}</td><td class="px-4 py-2 text-right">${formatCurrency(price)}</td><td class="px-4 py-2 text-right font-semibold">${formatCurrency(total)}</td>`;
+                            cells = `<td class="px-4 py-2">${item.description}</td><td class="px-4 py-2 text-center">${item.unit}</td><td class="px-4 py-2 text-center">${quantity}</td><td class="px-4 py-2 text-center">${performance}</td><td class="px-4 py-2 text-right">${formatCurrency(price)}</td><td class="px-4 py-2 text-right font-semibold">${formatCurrency(total)}</td>`;
                         } else {
                             const quantityLabel = (type === 'equipment') ? item.performance : item.quantity;
                             total = (quantityLabel || 0) * price;
-                            cells = `<td class="px-4 py-2">${item.description}</td><td class="px-4 py-2">${item.unit}</td><td class="px-4 py-2 text-right">${quantityLabel}</td><td class="px-4 py-2 text-right">${formatCurrency(price)}</td><td class="px-4 py-2 text-right font-semibold">${formatCurrency(total)}</td>`;
+                            cells = `<td class="px-4 py-2">${item.description}</td><td class="px-4 py-2 text-center">${item.unit}</td><td class="px-4 py-2 text-center">${quantityLabel}</td><td class="px-4 py-2 text-right">${formatCurrency(price)}</td><td class="px-4 py-2 text-right font-semibold">${formatCurrency(total)}</td>`;
                         }
                         subtotal += total;
                         rows += `<tr class="border-b">${cells}</tr>`;
                     });
                 }
                 if (type === 'equipment' && herramientaMenorPct > 0) {
-                    rows += `<tr class="bg-yellow-50 border-b"><td class="px-4 py-2 italic">Herramienta Menor</td><td class="px-4 py-2 italic">% Mano de Obra</td><td class="px-4 py-2 text-right italic">${herramientaMenorPct}%</td><td class="px-4 py-2 text-right italic">${formatCurrency(subtotalLabor)}</td><td class="px-4 py-2 text-right font-semibold italic">${formatCurrency(herramientaMenorValue)}</td></tr>`;
+                    rows += `<tr class="bg-yellow-50 border-b"><td class="px-4 py-2 italic">Herramienta Menor</td><td class="px-4 py-2 text-center italic">% Mano de Obra</td><td class="px-4 py-2 text-center italic">${herramientaMenorPct}%</td><td class="px-4 py-2 text-right italic">${formatCurrency(subtotalLabor)}</td><td class="px-4 py-2 text-right font-semibold italic">${formatCurrency(herramientaMenorValue)}</td></tr>`;
                     subtotal += herramientaMenorValue;
                 }
                 if (!rows) return '';
                 const colspan = headers.length - 1;
-                return `<div class="mb-8"><h3 class="text-xl font-bold text-gray-700 mb-2 border-b-2 pb-1">${title}</h3><table class="w-full text-sm"><thead><tr class="border-b-2">${headers.map(h => `<th class="px-4 py-2 text-left">${h}</th>`).join('')}</tr></thead><tbody>${rows}</tbody><tfoot><tr class="border-t-2"><td colspan="${colspan}" class="text-right font-bold px-4 py-2">SUBTOTAL:</td><td class="text-right font-bold px-4 py-2">${formatCurrency(subtotal)}</td></tr></tfoot></table></div>`;
+                return `<div class="mb-8"><h3 class="text-xl font-bold text-gray-700 mb-2 border-b-2 pb-1">${title}</h3><table class="w-full text-sm"><thead><tr class="border-b-2">${headerHtml}</tr></thead><tbody>${rows}</tbody><tfoot><tr class="border-t-2"><td colspan="${colspan}" class="text-right font-bold px-4 py-2">SUBTOTAL:</td><td class="text-right font-bold px-4 py-2">${formatCurrency(subtotal)}</td></tr></tfoot></table></div>`;
             };
 
             container.innerHTML = `<div class="p-4"><h1 class="text-3xl font-bold text-center mb-2">${apu.activityName}</h1><p class="text-center text-lg text-gray-600 mb-8">Unidad: ${apu.activityUnit}</p>${createTable('Materiales', ['Descripción', 'Unidad', 'Cantidad', 'Vr. Unitario', 'Total'], apu.materials, 'material')}${createTable('Transporte', ['Descripción', 'Unidad', 'Cantidad', 'Vr. Unitario', 'Total'], apu.transport, 'transport')}${createTable('Equipos y Herramientas', ['Descripción', 'Unidad', 'Rendimiento / %', 'Vr. Unitario / Base', 'Total'], apu.equipment, 'equipment')}${createTable('Mano de Obra', ['Descripción', 'Unidad', 'Cantidad', 'Rendimiento', 'Vr. Unitario', 'Total'], apu.labor, 'labor')}<div class="mt-10 max-w-md ml-auto space-y-2 text-sm"><div class="flex justify-between p-2 bg-gray-100 rounded"><span class="font-semibold">COSTO DIRECTO (A)</span><span class="font-bold">${formatCurrency(directCost)}</span></div><div class="flex justify-between p-2"><span class="pl-4">Administración (${apu.adminPercentage}%)</span><span>${formatCurrency(adminValue)}</span></div><div class="flex justify-between p-2"><span class="pl-4">Imprevistos (${apu.imprevistosPercentage}%)</span><span>${formatCurrency(imprevistosValue)}</span></div><div class="flex justify-between p-2"><span class="pl-4">Utilidad (${apu.utilidadPercentage}%)</span><span>${formatCurrency(utilidadValue)}</span></div><div class="flex justify-between p-2 bg-gray-100 rounded"><span class="font-semibold">COSTOS INDIRECTOS (B)</span><span class="font-bold">${formatCurrency(indirectCost)}</span></div><div class="flex justify-between p-3 bg-green-600 text-white rounded mt-2 text-base"><span class="font-bold">PRECIO TOTAL (A+B) / ${apu.activityUnit}</span><span class="font-bold">${formatCurrency(totalCost)}</span></div></div></div>`;
             viewerModal.open();
         }
-        async function downloadPdf() { if (!apuForExport) return; const content = $('apuViewerContainer'); const btn = $('downloadPdfBtn'); btn.disabled = true; btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i>`; try { const canvas = await html2canvas(content, { scale: 2 }); const imgData = canvas.toDataURL('image/png'); const { jsPDF } = window.jspdf; const pdf = new jsPDF('p', 'mm', 'a4'); const pdfWidth = pdf.internal.pageSize.getWidth(); const pdfHeight = pdf.internal.pageSize.getHeight(); const canvasWidth = canvas.width; const canvasHeight = canvas.height; const ratio = canvasWidth / canvasHeight; const imgHeight = pdfWidth / ratio; let heightLeft = imgHeight; let position = 0; pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight); heightLeft -= pdfHeight; while (heightLeft >= 0) { position = heightLeft - imgHeight; pdf.addPage(); pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight); heightLeft -= pdfHeight; } pdf.save(`APU-${apuForExport.activityName.replace(/ /g, "_")}.pdf`); } catch(e) { console.error("Error generating PDF:", e); showToast("No se pudo generar el PDF.", "error"); } finally { btn.disabled = false; btn.innerHTML = `<i class="fas fa-file-pdf"></i> PDF`; } }
+        
+        async function downloadPdf() {
+            if (!apuForExport) return;
+            const content = $('apuViewerContainer');
+            const btn = $('downloadPdfBtn');
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i>`;
+            
+            const originalStyles = { maxHeight: content.style.maxHeight, overflowY: content.style.overflowY };
+            content.style.maxHeight = 'none';
+            content.style.overflowY = 'visible';
+
+            try {
+                const canvas = await html2canvas(content, { scale: 2, windowWidth: content.scrollWidth, windowHeight: content.scrollHeight });
+                const imgData = canvas.toDataURL('image/png');
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                const imgHeight = canvas.height * pdfWidth / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+                pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
+                heightLeft -= pdfHeight;
+                while (heightLeft > 0) {
+                    position = -heightLeft;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, pdfWidth, imgHeight);
+                    heightLeft -= pdfHeight;
+                }
+                pdf.save(`APU-${apuForExport.activityName.replace(/ /g, "_")}.pdf`);
+            } catch(e) {
+                console.error("Error generating PDF:", e);
+                showToast("No se pudo generar el PDF.", "error");
+            } finally {
+                content.style.maxHeight = originalStyles.maxHeight;
+                content.style.overflowY = originalStyles.overflowY;
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fas fa-file-pdf"></i> PDF`;
+            }
+        }
+
         function downloadExcel() {
             if (!apuForExport) return;
             const wb = XLSX.utils.book_new();
@@ -288,10 +335,9 @@
             if (apuForExport.transport?.length) { const wsTransport = XLSX.utils.json_to_sheet(apuForExport.transport.map(m => ({'Descripción': m.description, 'Unidad': m.unit, 'Cantidad': m.quantity, 'Vr. Unitario': m.price, 'Total': m.quantity * m.price }))); XLSX.utils.book_append_sheet(wb, wsTransport, "Transporte"); }
             XLSX.writeFile(wb, `APU-${apuForExport.activityName.replace(/ /g, "_")}.xlsx`);
         }
-        function shareApu() { if (!apuForExport) return; const { activityName, activityUnit, materials = [], labor = [], equipment = [], transport = [], adminPercentage = 0, imprevistosPercentage = 0, utilidadPercentage = 0, herramientaMenorPct = 0 } = apuForExport; let text = `*** ANÁLISIS DE PRECIO UNITARIO ***\n\n`; text += `ACTIVIDAD: ${activityName}\n`; text += `UNIDAD: ${activityUnit}\n\n`; const subtotalLabor = (labor||[]).reduce((s,i)=>s+((i.quantity || 1) * (i.performance||0)*(i.price||0)),0); const herramientaMenorValue = subtotalLabor * (herramientaMenorPct/100); const subtotalEquipment = (equipment||[]).reduce((s,i)=>s+((i.performance||0)*(i.price||0)),0) + herramientaMenorValue; const directCost = (materials||[]).reduce((s,i)=>s+((i.quantity||0)*(i.price||0)),0) + subtotalLabor + subtotalEquipment + (transport||[]).reduce((s,i)=>s+((i.quantity||0)*(i.price||0)),0); const adminValue = directCost * (adminPercentage/100); const imprevistosValue = directCost * (imprevistosPercentage/100); const utilidadValue = directCost * (utilidadPercentage/100); const indirectCost = adminValue + imprevistosValue + utilidadValue; const totalCost = directCost + indirectCost; text += `COSTO DIRECTO: ${formatCurrency(directCost)}\n`; text += `COSTOS INDIRECTOS (A+I+U): ${formatCurrency(indirectCost)}\n`; text += `--------------------------------\n`; text += `PRECIO TOTAL / ${activityUnit}: ${formatCurrency(totalCost)}\n`; text += `--------------------------------\n\n`; text += `Creado con el Creador de APU.`; const textArea = document.createElement('textarea'); textArea.value = text; document.body.appendChild(textArea); textArea.select(); try { document.execCommand('copy'); showToast('APU copiado al portapapeles.'); } catch (err) { showToast('No se pudo copiar el texto.', 'error'); } document.body.removeChild(textArea); }
+        
         $('downloadPdfBtn').addEventListener('click', downloadPdf);
         $('downloadExcelBtn').addEventListener('click', downloadExcel);
-        $('shareApuBtn').addEventListener('click', shareApu);
 
         // --- EVENT LISTENERS ---
         $('add-material-btn').addEventListener('click', () => addItem('material')); $('add-labor-btn').addEventListener('click', () => addItem('labor')); $('add-equipment-btn').addEventListener('click', () => addItem('equipment')); $('add-transport-btn').addEventListener('click', () => addItem('transport')); 
